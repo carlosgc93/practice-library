@@ -1,8 +1,23 @@
 {% extends "base.html" %}
 
 {% block main %}
-
-<h2>MENU LIBROS
-</h2>
-
+<div class="container">
+<h2>MENU LIBROS</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in object_list %}
+        <tr>
+            <td> {{ object.title }} </td>
+            <td> {{ object.creation_date_book }} </td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+</div>
 {% endblock main %}

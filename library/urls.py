@@ -17,21 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-# MEDIAFILES####
+# MEDIAFILES Config
 from django.conf import settings
 from django.conf.urls.static import static
+
+# Importanto vista del proyecto principal
 from .views import *
-
-################
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_library, name="library"),
+    path('', LibraryIndex.as_view(), name="library"),
     path('libros', include('app_book.urls')),
 ]
 
-#####MEDIAFILES#####
+# MEDIAFILES Config
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#################
+

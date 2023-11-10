@@ -30,7 +30,7 @@ class Book(models.Model):
     description_book = models.TextField('Descripción')
     creation_date_book = models.DateTimeField(
         'Fecha de creación', auto_now_add=True)
-    front_page = models.ImageField(upload_to='front_images',null=False, blank=False )
+    front_page = models.ImageField(upload_to='front_images', null=False, blank=False)
 
     class Meta:
         verbose_name = 'Libro'

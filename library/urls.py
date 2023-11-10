@@ -1,6 +1,3 @@
-
-
-
 """
 URL configuration for library project.
 
@@ -20,16 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
-#MEDIAFILES####
+# MEDIAFILES####
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import *
+
 ################
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('app_book.urls')),
+    path('', index_library, name="library"),
+    path('libros', include('app_book.urls')),
 ]
 
 #####MEDIAFILES#####
